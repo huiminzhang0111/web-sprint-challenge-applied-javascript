@@ -75,10 +75,10 @@ const cardAppender = (selector) => {
       res.data.articles['jquery'].forEach(item => {
         document.querySelector(selector).appendChild(Card(item));
       })
-      res.data.articles["node.js"].forEach(item => {
+      res.data.articles["node"].forEach(item => {
         document.querySelector(selector).appendChild(Card(item));
-      }).catch(err => console.error(err));
-    })
+      })
+    }).catch(err => console.error(err));
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
