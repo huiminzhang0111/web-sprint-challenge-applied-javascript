@@ -62,11 +62,23 @@ articles_title.forEach(item => {
 const cardAppender = (selector) => {
   axios.get('http://localhost:5000/api/articles')
     .then(res => {
-      console.log(res);
+      //console.log(res);
       res.data.articles['javascript'].forEach(item => {
         document.querySelector(selector).appendChild(Card(item));
       })
-    }).catch(err => console.error(err));
+      res.data.articles['bootstrap'].forEach(item => {
+        document.querySelector(selector).appendChild(Card(item));
+      })
+      res.data.articles['technology'].forEach(item => {
+        document.querySelector(selector).appendChild(Card(item));
+      })
+      res.data.articles['jquery'].forEach(item => {
+        document.querySelector(selector).appendChild(Card(item));
+      })
+      res.data.articles["node.js"].forEach(item => {
+        document.querySelector(selector).appendChild(Card(item));
+      }).catch(err => console.error(err));
+    })
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
