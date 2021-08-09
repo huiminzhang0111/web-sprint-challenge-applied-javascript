@@ -1,24 +1,27 @@
-const Header = (title, date, temp) => {
+
+
+
+
+const Carousel = (image_array) => {
   //instantiating the elements
+  const img1 = document.createElement('img');
+  const img2 = document.createElement('img');
+  const img3 = document.createElement('img');
+  const left_button = document.createElement('button');
+  const right_button = document.createElement('button');
 
-  const the_header = document.createElement('div');
-  const the_date = document.createElement('span');
-  const the_title = document.createElement('h1');
-  const the_temp = document.createElement('span');
   //setting class names, attributes, and txt
-  the_header.classList.add('header');
-  the_date.classList.add('date');
-  the_temp.classList.add('temp');
-  the_header.appendChild(the_date);
-  the_header.appendChild(the_title);
-  the_header.appendChild(the_temp);
-  the_title.textContent = ` ${title} `;
-  the_date.textContent = ` ${date} `;
-  the_temp.textContent = ` ${temp} `;
-
+  img1.setAttribute('src', 'https://picsum.photos/200/300');
+  img2.setAttribute('src', 'https://picsum.photos/200/300');
+  img3.setAttribute('src', 'https://picsum.photos/200/300');
+  left_button.classList.add('left-button');
+  right_button.classList.add('right-button');
+  img2.classList.add('carousel');
+  img2.classList.add('carousel');
+  img2.classList.add('carousel');
   //creating hierarchy
- 
- 
+  
+
   return the_header;
 
   // TASK 1
@@ -35,8 +38,7 @@ const Header = (title, date, temp) => {
   //
 }
 
-const headermain = Header('Lambda Times', 'Jan 6, 2021', '26 degrees');
-const headerAppender = (selector) => {
+const carouselAppender  = (selector) => {
   document.querySelector(selector).appendChild(headermain);
   // TASK 2
   // ---------------------
@@ -46,4 +48,4 @@ const headerAppender = (selector) => {
   //
 }
 
-export { Header, headerAppender }
+export { Carousel, carouselAppender }
